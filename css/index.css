@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+  /* --variableName: variableValue;   */
+  --primaryColor: #0039E9;
+  --textColor: #121314;
+  --secondaryColor: #FB9B2A;
+  --fontPrimary: 'Lato', sans-serif;
+
+}
+
+.navigation__list {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 30px 60px;
+font-family: var(--fontPrimary);
+color: var(--textColor)
+}
+
+.navigation__list-items {
+    display: flex;
+}
+
+.logo {
+    text-decoration: none;
+    color: var(--primaryColor)
+}
+
+.todo__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.todo__section--heading {
+    color: var(--textColor);
+    font-size: 24px;
+    font-family: var(--fontPrimary);
+    margin-bottom: 40px;
+}
+
+.todo__section--todoItem {
+    display: flex;
+    min-width: 300px;
+}
+
+.todo__section--todoItem > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.todo__section--todoItem  .todo__text {
+    display: inline-block;
+    margin-right: 100px;
+    margin-left: 10px;
+    font-family: var(--fontPrimary);
+}
+
+.todo__actions {
+    padding: 5px 16px;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid transparent;
+}
+
+.edit__btn {
+    background-color: var(--primaryColor);
+}
+
+.delete__btn {
+    background-color: var(--secondaryColor);
+    color: black;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 500px;
+}
+
+.form__input {
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid var(--textColor);
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 16px;
+    font-family: var(--fontPrimary);
+    margin-bottom: 20px;
+}
+
+.add__btn {
+    padding: 10px 16px;
+    background-color: var(--primaryColor);
+    color: white;
+}

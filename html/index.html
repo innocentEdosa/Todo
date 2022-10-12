@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/index.css" />
+
+  </head>
+  <body>
+    <main>
+      <nav class="navigation">
+        <ul class="navigation__list">
+          <li class="navigation__list-items">
+            <a class="logo" href="./">Elian's Todo</a>
+          </li>
+          <li class="navigation__list-items">About</li>
+        </ul>
+      </nav>
+      <section class="todo__section">
+        <h1 class="todo__section--heading">Monday Todo's</h1>
+        <ul>
+          <li class="todo__section--todoItem">
+
+            <div>
+              <input class="todo__checkbox" type="checkbox" />
+              <span class="todo__text"> This is the todo text </span>
+              <div class="todo__actions--wrapper">
+                <button id="edit_btn" class="todo__actions edit__btn">edit</button>
+                <button id="delete_btn" class="todo__actions delete__btn">delete</button>
+              </div>
+            </div>
+
+          </li>
+        </ul>
+
+
+        <form class="form">
+            <input class="form__input" type="text" />
+            <button type="button"  class="todo__actions add__btn">Add</button>
+        </form>
+
+
+      </section>
+    </main>
+    <script src="../js/index.js" ></script>
+  </body>
+</html>
