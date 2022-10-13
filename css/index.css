@@ -49,6 +49,10 @@ color: var(--textColor)
     min-width: 300px;
 }
 
+.todo__section--todoItem + .todo__section--todoItem {
+margin-top: 20px
+}
+
 .todo__section--todoItem > div {
     display: flex;
     align-items: center;

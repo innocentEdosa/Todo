@@ -27,25 +27,15 @@
       </nav>
       <section class="todo__section">
         <h1 class="todo__section--heading">Monday Todo's</h1>
-        <ul>
-          <li class="todo__section--todoItem">
 
-            <div>
-              <input class="todo__checkbox" type="checkbox" />
-              <span class="todo__text"> This is the todo text </span>
-              <div class="todo__actions--wrapper">
-                <button id="edit_btn" class="todo__actions edit__btn">edit</button>
-                <button id="delete_btn" class="todo__actions delete__btn">delete</button>
-              </div>
-            </div>
-
-          </li>
+        <ul id="todo__list">
+            <!-- this is where our todo should live -->
         </ul>
 
 
-        <form class="form">
-            <input class="form__input" type="text" />
-            <button type="button"  class="todo__actions add__btn">Add</button>
+        <form id="form" class="form">
+            <input id="todo__input" name="todo" class="form__input" type="text" />
+            <button  class="todo__actions add__btn">Add</button>
         </form>
 
 
