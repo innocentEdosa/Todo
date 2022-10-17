@@ -1,59 +1,52 @@
-let editButton;
-let deleteBtn;
-let form;
-let todoListWrapper;
-let todoInputField;
+// how do we select html elements in javascript
 
+// if the html elment has an id we can use
+// const element = document.getElementById(id)
+// const elementTwo = document.querySelector("#id")
 
-function onEditTodo() {
-  alert("i am editing");
+function deleteTodo() {
+  alert("i am deleteing");
 }
 
-function onDeleteTodo() {
-  alert(" i am deleting");
+function addListenersToDeleteButtons() {
+  // select all the buttons with .delete__btn class.
+  //remember querySelectorAll return an array (NodeList)
+  // only the last element in the array is new. every other element as been existing before;
+  const buttonCollection = document.querySelectorAll(".delete__btn");
+  console.log(buttonCollection);
+  // select the last element in the array;
+  const lastButton = buttonCollection[buttonCollection.length - 1];
+  lastButton.addEventListener("click", deleteTodo);
 }
 
-//
-function showTodoItem(todo) {
-    let li = document.createElement('li');
-    li.innerHTML = `      <div>
-    <input class="todo__checkbox" type="checkbox" />
-    <span class="todo__text"> ${todo} </span>
-    <div class="todo__actions--wrapper">
-      <button id="edit_btn" class="todo__actions edit__btn">
-        edit
-      </button>
-      <button id="delete_btn" class="todo__actions delete__btn">
-        delete
-      </button>
-    </div>
-  </div>`
+function showTodoOnTheScreen(todo) {
+  const listOfTodo = document.querySelector("#todo__list");
+  const li = document.createElement("li");
+  li.classList.add("todo__section--todoItem");
 
-  li.classList.add("todo__section--todoItem")
-    
+  li.innerHTML = `<div>
+  <input class="todo__checkbox" type="checkbox" />
+  <span class="todo__text"> ${todo} </span>
+  <div class="todo__actions--wrapper">
+    <button id="edit_btn" class="todo__actions edit__btn">
+      edit
+    </button>
+    <button id="delete_btn" class="todo__actions delete__btn">
+      delete
+    </button>
+  </div>
+</div>`;
 
-  todoListWrapper.appendChild(li);
+  listOfTodo.appendChild(li);
+  addListenersToDeleteButtons();
 }
 
-function onTodoFormSubmit(event) {
-  event.preventDefault();
-
-  const todoValue = todoInputField.value;
-
-  showTodoItem(todoValue);
+function todoFormSumbitHandler(eventObject) {
+  eventObject.preventDefault();
+  const inputField = document.querySelector("#todo__input");
+  const todoValue = inputField.value;
+  showTodoOnTheScreen(todoValue);
 }
 
-function setup() {
-  editButton = document.getElementById("edit_btn");
-  deleteBtn = document.getElementById("delete_btn");
-  form = document.getElementById("form");
-  todoListWrapper = document.getElementById("todo__list");
-  todoInputField = document.getElementById("todo__input");
-
-  form.addEventListener("submit", onTodoFormSubmit);
-
-  editButton.addEventListener("click", onEditTodo);
-  deleteBtn.addEventListener("click", onDeleteTodo);
-}
-
-setup();
+const todoForm = document.getElementById("form");
+todoForm.addEventListener("submit", todoFormSumbitHandler);
