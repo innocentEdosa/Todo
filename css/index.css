@@ -75,6 +75,10 @@ margin-top: 20px
     border: 1px solid transparent;
 }
 
+.margin {
+    margin-bottom: 20px;
+}
+
 .edit__btn {
     background-color: var(--primaryColor);
 }
@@ -100,6 +104,7 @@ margin-top: 20px
     font-size: 16px;
     font-family: var(--fontPrimary);
     margin-bottom: 20px;
+
 }
 
 .add__btn {
